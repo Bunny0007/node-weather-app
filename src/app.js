@@ -14,6 +14,9 @@ app.set('view engine','hbs')
 app.set('views',viewTemplate)
 hbs.registerPartials(partialsPath)
 
+const port = process.env.PORT || 3000;
+
+
 app.get('',(req,res)=>{
     res.render('index',{
         title:'Weather',
@@ -77,6 +80,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log('This app is running')
+app.listen(port,()=>{
+    console.log('This app is running '+ port)
 });
